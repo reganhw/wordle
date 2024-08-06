@@ -1,0 +1,183 @@
+body{
+    background-color : white;    
+
+}
+
+.content{
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+}
+
+
+.inputspace{
+    
+    
+    width: 400px;
+ 
+
+
+    display:grid;
+    grid-template-rows: (2, 50%);
+    
+    /*
+    height : 140px;
+    min-height : 9vw;
+    width : 26vw;
+    min-width : 300px;
+    */
+    position : relative;
+    z-index : 3;
+
+
+}
+
+#yourguess{
+    font-size : 35px;
+    font-family : arial;
+    text-align : left;
+    color : rgb(173, 88, 117);
+
+}
+
+
+
+#getInput{
+    
+    display : flex;
+   
+    justify-content: space-around;
+    
+
+  
+}
+
+#myInput {
+    text-align : center;
+    text-transform : uppercase;
+    letter-spacing : 0.5em;
+    font-size : 25px;
+    background-color : rgba(0,0,0,0);
+    color : rgb(100,100,100);
+    width: 350px;
+    outline : none;
+
+}
+
+#myButton{
+   border-radius : 50%;
+   width : 50px;
+   height : 50px;
+   font-size: auto;
+   /*
+   min-height : 4vw;
+   min-width : 4vw;
+   */
+   background-color: rgba(200,200,200,0.4);
+   
+}
+
+
+
+#board {
+
+    display : grid;
+    grid-template-rows : repeat(6,16.5%);
+    /*
+    height : 50%;
+    width : 600px;
+    max-width : 95vw;
+    */
+    width: 400px;
+    height: 480px;
+    position: relative;
+    margin-top : 4vh;
+}
+
+.row {
+    display :grid;
+    grid-template-columns: repeat(5,20%);
+    justify-content : center;
+    
+}
+
+.tile {
+    background-color : rgba(179, 187, 229, 0.8);
+    /*
+    width : 70px;
+    height : 70px;
+    */
+    display : grid;
+    justify-items : center;
+    align-items : center;
+    margin : 5px 5px 5px 5px;
+}
+
+.alp {
+    font-family : serif;
+    color : white;
+    text-transform : uppercase;
+    font-size : 40px;
+}
+
+.modal{
+    position : fixed;
+    top : 30%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    display : none;
+    max-width : 80%;
+    width : 300px;
+    padding : 20px 20px 20px 20px;
+
+    z-index : 10;
+    background-color : beige;
+    border : 1px dashed palevioletred;
+    border-radius : 10px;
+    
+
+}
+
+#modaltxt{
+    color : black;
+}
+
+
+#back, #more {
+    margin: 5px 5px 5px 5px;
+
+}
+
+a{
+    color : palevioletred;
+}
+
+#overlay{
+    background-color : rgba(0,0,0,0.5);
+    position : fixed;
+    top : 0;
+    left : 0;
+    bottom :0;
+    right : 0;
+    z-index : 8;
+    display: none;
+
+}
+
+@media screen and (max-width: 500px) {
+    .grid{
+        width:90vw;
+        height: 108vw;
+    }
+    #myInput{
+        font-size: 27px;
+    }
+    #myButton{
+        width: 40px;
+        height: 40px;
+    
+    }
+
+  }

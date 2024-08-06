@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Wordle Recreation</title>
+</head>
+
+<body>
+        <div class = "content">
+        <div id = "overlay"></div>
+        
+        
+            <div class="inputspace">
+                <div id="yourguess"><p>Your guess:</p></div>
+                <div id="getInput">
+                    <input id="myInput" maxlength=5, type="text"></input>
+                    <button id="myButton" onclick="document.getElementById('myInput').value = ''">GO!</button>
+                </div>
+            </div>
+        
+
+
+        
+            <div class="modal" id="modal1">
+                <div id="result"></div> <br>
+                <div id="sndpart"></div><br>
+                <button id="back">Go back</button>
+                <button id="more"> Yes</button>
+            </div>
+        
+<!--
+        <div class = "sides", id = "leftdec"></div>
+        <div class = "sides", id = "rightdec"></div>
+-->
+        <!--Board Start-->
+        <div id="board">
+            <!--Row1-->
+            <div class="row">
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+
+            </div>
+
+            <!--Row2-->
+            <div class="row">
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+
+            </div>
+
+            <!--Row3-->
+            <div class="row">
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+
+            </div>
+
+            <!--Row4-->
+            <div class="row">
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+
+            </div>
+
+            <!--Row5-->
+            <div class="row">
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+
+            </div>
+
+            <!--Row6-->
+            <div class="row">
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+                <div class="tile">
+                    <div class="alp"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div> <!--content end-->
+
+    
+    <script src="app.js"></script>
+</body>
+
+
+
+</html>
