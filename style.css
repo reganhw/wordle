@@ -1,9 +1,13 @@
 body{
-    background-color : white;    
+    background-color : white;
+    display:flex;
+    justify-content:center;   
 
 }
 
 .content{
+    width: 400px;
+    max-width: 97vw;
     display:flex;
     flex-direction: column;
     justify-content:space-around;
@@ -12,21 +16,9 @@ body{
 
 
 .inputspace{
-    
-    
-    width: 400px;
-    max-width: 97vw;
-
 
     display:grid;
     grid-template-rows: (2, 50%);
-    
-    /*
-    height : 140px;
-    min-height : 9vw;
-    width : 26vw;
-    min-width : 300px;
-    */
     position : relative;
     z-index : 3;
 
@@ -70,10 +62,6 @@ body{
    width : 50px;
    height : 50px;
    font-size: auto;
-   /*
-   min-height : 4vw;
-   min-width : 4vw;
-   */
    background-color: rgba(200,200,200,0.4);
    
 }
@@ -84,8 +72,7 @@ body{
 
     display : grid;
     grid-template-rows : repeat(6,16.5%);
-    width: 400px;
-    max-width: 95vw;
+    width:100%;
     height: 480px;
     position: relative;
     margin-top : 4vh;
@@ -100,10 +87,7 @@ body{
 
 .tile {
     background-color : rgba(179, 187, 229, 0.8);
-    /*
-    width : 70px;
-    height : 70px;
-    */
+
     display : grid;
     justify-items : center;
     align-items : center;
@@ -162,10 +146,7 @@ a{
 }
 
 @media screen and (max-width: 500px) {
-    .grid{
-        width:90vw;
-        height: 108vw;
-    }
+
     #myInput{
         font-size: 27px;
     }
