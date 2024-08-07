@@ -1,14 +1,14 @@
-var wordList = ["ALIGN", "TORSO", "PHASE"];
-var myButton = document.getElementById("myButton");
-var rowCount = 0;
-var roundCount = 0;
-var todaysWord = "ALIGN";
+let wordList = ["ALIGN", "TORSO", "PHASE"];
+let myButton = document.getElementById("myButton");
+let rowCount = 0;
+let roundCount = 0;
+let todaysWord = "ALIGN";
 
-var backButton = document.getElementById("back");
-var modalButton= document.getElementById("modalbutton");
-var moreGames = document.getElementById("more");
-var modal = document.getElementById("modal1");
-var overlay = document.getElementById("overlay");
+let backButton = document.getElementById("back");
+let modalButton= document.getElementById("modalbutton");
+let moreGames = document.getElementById("more");
+let modal = document.getElementById("modal1");
+let overlay = document.getElementById("overlay");
 
 myButton.onclick = function main() {
     todaysWord = wordList[roundCount];
@@ -73,7 +73,7 @@ function gameEnd(myInput){
 
 backButton.onclick = function goBack(){
    
-    location.href = "../index.html";
+    location.href = "http://www.reganhw.site";
 }
 
 
