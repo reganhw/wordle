@@ -10,7 +10,14 @@ let moreGames = document.getElementById("more");
 let modal = document.getElementById("modal1");
 let overlay = document.getElementById("overlay");
 
-myButton.onclick = function main() {
+myButton.onclick = takeInput;
+document.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        takeInput();
+    }
+});
+
+function takeInput() {
     todaysWord = wordList[roundCount];
 
     let myInput = document.querySelector("#myInput").value.toUpperCase();
