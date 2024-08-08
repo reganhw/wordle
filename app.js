@@ -1,5 +1,5 @@
 let wordList = ["ALIGN", "TORSO", "PHASE"];
-let myButton = document.getElementById("myButton");
+let goButton = document.getElementById("goButton");
 let rowCount = 0;
 let roundCount = 0;
 let todaysWord = "ALIGN";
@@ -10,7 +10,7 @@ let moreGames = document.getElementById("more");
 let modal = document.getElementById("modal1");
 let overlay = document.getElementById("overlay");
 
-myButton.onclick = takeInput;
+goButton.onclick = takeInput;
 document.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         takeInput();
