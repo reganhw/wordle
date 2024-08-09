@@ -14,13 +14,11 @@ const moreButton = document.getElementById("more-button");
 goButton.onclick = takeInput;
 document.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        console.log("Enter button pressed.")
         takeInput();
     }
 });
 
 function takeInput() {
-    console.log("takeInput was run." )
     todaysWord = wordList[roundCount];
 
     let myInput = document.querySelector("#myInput").value.toUpperCase();
@@ -88,7 +86,6 @@ backButton.onclick = function goBack(){
 
 moreButton.onclick = function newRound(){  
     roundCount = roundCount +1;
-    todaysWord = wordList [roundCount];
     modal.style.display = 'none';
     overlay.style.display = 'none';
 
