@@ -23,7 +23,6 @@ function takeInput() {
     let myGuess = document.querySelector("#guess").value.toUpperCase();
     if (validInput(myGuess)){                                                   // If the input is valid.
         let row = document.getElementsByClassName('row')[rowCount].children;    // Tiles in the current row.
-
         changeColor(myGuess, row);                                              // Change colour of current row.
 
         if ((myGuess == todaysWord)||(rowCount==5)){                            // If the guess is correct or if the 6th row was reached,
@@ -39,10 +38,10 @@ function takeInput() {
 
 function validInput(myGuess){
     if (myGuess.length !== 5) {
-        alert("The word must contain five letters");
+        alert("The input must contain five letters.");
         return false;
     } else if (!/^[A-Z]+$/.test(myGuess)){
-        alert("The word must be alphabetical.")
+        alert("The input must be alphabetical.")
         return false;
     } else{
         return true;
@@ -86,21 +85,22 @@ function gameEnd(myGuess){
 
 }
 
-//NEW ROUND
+// MODAL BUTTONS
 
 backButton.onclick = function goBack(){
-   
     location.href = "http://www.reganhw.site";
 }
 
 
-moreButton.onclick = function newRound(){  
-    // Update round count and close modal.
-    roundCount = roundCount +1;
-    todaysWord = wordList[roundCount];
+moreButton.onclick = function newRound(){ 
+
+    // Close modal.
     modal.style.display = 'none';
     overlay.style.display = 'none';
 
+    // Update round count.
+    roundCount = roundCount +1;
+    todaysWord = wordList[roundCount];
     
     // Reset board.
     rowCount = 0;
@@ -108,8 +108,8 @@ moreButton.onclick = function newRound(){
     let alps = document.getElementsByClassName('alp');
 
     for (let i = 0; i <30; i++){
-        tiles[i].style.background = 'rgba(179, 187, 229, 0.8)';
-        alps[i].innerHTML = '';
+        tiles[i].style.background = 'rgba(179, 187, 229, 0.8)';  // Tile colour reset.
+        alps[i].innerHTML = '';                                  // Letters erased.
     }
 }
 
