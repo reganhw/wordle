@@ -1,8 +1,8 @@
 const goButton = document.getElementById("go-button");
 let wordList = ["ALIGN", "TORSO", "PHASE"];
-let todaysWord = "";
 let rowCount = 0;
 let roundCount = 0;
+let todaysWord = wordList[roundCount]
 
 const overlay = document.getElementById("overlay");
 const modal = document.getElementById("modal");
@@ -11,7 +11,8 @@ const sndpart = document.getElementById("sndpart");
 const backButton = document.getElementById("back-button");
 const moreButton = document.getElementById("more-button");
 
-goButton.onclick = takeInput;
+// Take input when clicking "Go" button or pressing "Enter".
+goButton.onclick = takeInput; 
 document.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         takeInput();
@@ -19,48 +20,57 @@ document.addEventListener("keypress", function(event) {
 });
 
 function takeInput() {
-    todaysWord = wordList[roundCount];
+    let myGuess = document.querySelector("#guess").value.toUpperCase();
+    if (validInput(myGuess)){                                                   // If the input is valid.
+        let row = document.getElementsByClassName('row')[rowCount].children;    // Tiles in the current row.
 
-    let myInput = document.querySelector("#guess").value.toUpperCase();
-    let row = document.getElementById("board").children[rowCount].children;
+        changeColor(myGuess, row);                                              // Change colour of current row.
 
-    if (myInput.length !== 5) {
-        alert("The word must contain five letters");
-    } else {
-        changeColor(myInput, row);
-        rowCount = rowCount+1;
-        if ((myInput == todaysWord)||(rowCount==6)){
-            gameEnd(myInput);
+        if ((myGuess == todaysWord)||(rowCount==5)){                            // If the guess is correct or if the 6th row was reached,
+            gameEnd(myGuess);                                                   // End the game.
         }
-        
+
+        rowCount = rowCount+1;                                                  // Update row count.
     }
-    document.querySelector('#guess').value = '';
+        
+    document.querySelector('#guess').value = '';                                // Reset input.
 
 }
 
-function changeColor(myInput, row) {
+function validInput(myGuess){
+    if (myGuess.length !== 5) {
+        alert("The word must contain five letters");
+        return false;
+    } else if (!/^[A-Z]+$/.test(myGuess)){
+        alert("The word must be alphabetical.")
+        return false;
+    } else{
+        return true;
+    }
+}
+
+function changeColor(myGuess, row) {
     for (let i = 0; i < 5; i++) {
-        if (myInput[i] == todaysWord[i]) {
+        if (myGuess[i] == todaysWord[i]) {
             row[i].style.background = 'rgba(40,128,40,0.8)';
-        } else if (todaysWord.includes(myInput[i])) {
+        } else if (todaysWord.includes(myGuess[i])) {
             row[i].style.background = 'rgba(225,173,50,0.8)';
         } else {
             row[i].style.background = 'rgba(100,100,100,0.8)';
         }
 
         let txt = row[i].children[0];
-        txt.innerHTML = myInput[i];
+        txt.innerHTML = myGuess[i];
     }
-    
 
 }
 
-function gameEnd(myInput){
+function gameEnd(myGuess){
     modal.style.display = 'initial';
     overlay.style.display = 'initial';
     
 
-    if ((myInput==todaysWord)){
+    if ((myGuess==todaysWord)){
         result.innerHTML = "Success! The correct word is : "+ todaysWord +".";
     }else{
         result.innerHTML = "The correct word was : " +todaysWord+ ".";
@@ -85,13 +95,14 @@ backButton.onclick = function goBack(){
 
 
 moreButton.onclick = function newRound(){  
-    //update roundcount and close modal
+    // Update round count and close modal.
     roundCount = roundCount +1;
+    todaysWord = wordList[roundCount];
     modal.style.display = 'none';
     overlay.style.display = 'none';
 
     
-    //reset board
+    // Reset board.
     rowCount = 0;
     let tiles = document.getElementsByClassName('tile');
     let alps = document.getElementsByClassName('alp');
