@@ -1,4 +1,4 @@
-const goButton = document.getElementById("goButton");
+const goButton = document.getElementById("go-button");
 let wordList = ["ALIGN", "TORSO", "PHASE"];
 let todaysWord = "";
 let rowCount = 0;
@@ -21,7 +21,7 @@ document.addEventListener("keypress", function(event) {
 function takeInput() {
     todaysWord = wordList[roundCount];
 
-    let myInput = document.querySelector("#myInput").value.toUpperCase();
+    let myInput = document.querySelector("#guess").value.toUpperCase();
     let row = document.getElementById("board").children[rowCount].children;
 
     if (myInput.length !== 5) {
@@ -34,7 +34,7 @@ function takeInput() {
         }
         
     }
-    document.querySelector('#myInput').value = '';
+    document.querySelector('#guess').value = '';
 
 }
 
@@ -85,6 +85,7 @@ backButton.onclick = function goBack(){
 
 
 moreButton.onclick = function newRound(){  
+    //update roundcount and close modal
     roundCount = roundCount +1;
     modal.style.display = 'none';
     overlay.style.display = 'none';
