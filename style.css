@@ -101,7 +101,7 @@ body{
     font-size : 40px;
 }
 
-.modal{
+#modal{
     position : fixed;
     top : 30%;
     left : 50%;
@@ -124,7 +124,7 @@ body{
 }
 
 
-#back, #more {
+#back-button, #more-button {
     margin: 5px 5px 5px 5px;
 
 }

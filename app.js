@@ -1,23 +1,26 @@
+const goButton = document.getElementById("goButton");
 let wordList = ["ALIGN", "TORSO", "PHASE"];
-let goButton = document.getElementById("goButton");
+let todaysWord = "";
 let rowCount = 0;
 let roundCount = 0;
-let todaysWord = "ALIGN";
 
-let backButton = document.getElementById("back");
-let modalButton= document.getElementById("modalbutton");
-let moreGames = document.getElementById("more");
-let modal = document.getElementById("modal1");
-let overlay = document.getElementById("overlay");
+const overlay = document.getElementById("overlay");
+const modal = document.getElementById("modal");
+const result = document.getElementById("result");
+const sndpart = document.getElementById("sndpart");
+const backButton = document.getElementById("back-button");
+const moreButton = document.getElementById("more-button");
 
 goButton.onclick = takeInput;
 document.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
+        console.log("Enter button pressed.")
         takeInput();
     }
 });
 
 function takeInput() {
+    console.log("takeInput was run." )
     todaysWord = wordList[roundCount];
 
     let myInput = document.querySelector("#myInput").value.toUpperCase();
@@ -47,7 +50,7 @@ function changeColor(myInput, row) {
             row[i].style.background = 'rgba(100,100,100,0.8)';
         }
 
-        txt = row[i].children[0];
+        let txt = row[i].children[0];
         txt.innerHTML = myInput[i];
     }
     
@@ -57,8 +60,7 @@ function changeColor(myInput, row) {
 function gameEnd(myInput){
     modal.style.display = 'initial';
     overlay.style.display = 'initial';
-    result = document.getElementById("result");
-    sndpart = document.getElementById("sndpart");
+    
 
     if ((myInput==todaysWord)){
         result.innerHTML = "Success! The correct word is : "+ todaysWord +".";
@@ -69,7 +71,7 @@ function gameEnd(myInput){
     if (roundCount<2){
         sndpart.innerHTML = "Try another round?";
     }else{
-        moreGames.style.display = 'none';
+        moreButton.style.display = 'none';
         sndpart.innerHTML = "That's all three rounds. Thanks for playing."
     }
 
@@ -84,7 +86,7 @@ backButton.onclick = function goBack(){
 }
 
 
-moreGames.onclick = function newRound(){  
+moreButton.onclick = function newRound(){  
     roundCount = roundCount +1;
     todaysWord = wordList [roundCount];
     modal.style.display = 'none';
