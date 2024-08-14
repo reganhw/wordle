@@ -21,6 +21,7 @@ body{
     grid-template-rows: (2, 50%);
     position : relative;
     z-index : 3;
+    width: 100%;
 
 
 }
@@ -35,14 +36,12 @@ body{
 
 
 
-#get-input{
+#get-input{ /* contains the input field and go button */
     
     display : flex;
    
     justify-content: space-around;
     
-
-  
 }
 
 #guess {
@@ -52,7 +51,7 @@ body{
     font-size : 25px;
     background-color : rgba(0,0,0,0);
     color : rgb(100,100,100);
-    width: 350px;
+    width: 300px;
     outline : none;
 
 }
@@ -149,10 +148,11 @@ a{
 
     #guess{
         font-size: 27px;
+        width: 75vw;
     }
     #go-button{
-        width: 40px;
-        height: 40px;
+        width: 15vw;
+        height: 15vw;
     
     }
 
