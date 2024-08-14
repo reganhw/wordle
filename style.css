@@ -30,7 +30,7 @@ body{
     font-size : 35px;
     font-family : arial;
     text-align : left;
-    color : rgb(173, 88, 117);
+    color : rgb(105, 89, 74);
 
 }
 
@@ -51,7 +51,7 @@ body{
     font-size : 25px;
     background-color : rgba(0,0,0,0);
     color : rgb(100,100,100);
-    width: 300px;
+    width: 330px;
     outline : none;
 
 }
